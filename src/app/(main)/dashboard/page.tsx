@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Clock, PresentationChart } from '@phosphor-icons/react';
+import { ArrowRight, CheckCircle, Clock, PresentationChart, DownloadSimple } from '@phosphor-icons/react';
 import { useAppSelector } from '@/redux/hooks';
 
 export default function DashboardPage() {
@@ -15,7 +15,37 @@ export default function DashboardPage() {
         <p className="text-muted-foreground">Here is an overview of your workspace.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="md:col-span-2 bg-gradient-to-br from-primary/10 via-background to-secondary/30 border border-primary/20 rounded-xl p-6 shadow-sm">
+          <div className="mb-4">
+            <h3 className="flex items-center gap-2 text-lg font-semibold tracking-tight">
+              <DownloadSimple className="w-5 h-5 text-primary" />
+              TaskSkill Chrome Extension
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              Access your tasks from anywhere on the web. Syncs instantly with your account.
+            </p>
+          </div>
+          <div>
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between bg-background rounded-lg border p-4 shadow-inner">
+              <div className="space-y-1">
+                <h4 className="text-sm font-medium">Developer Mode Installation</h4>
+                <p className="text-xs text-muted-foreground max-w-[400px]">
+                  Download the ZIP, extract it, and load it via <code className="bg-secondary px-1 py-0.5 rounded text-foreground font-mono">chrome://extensions</code> by turning on Developer Mode and clicking "Load unpacked".
+                </p>
+              </div>
+              <a 
+                href="/taskskill-extension.zip" 
+                download
+                className="shrink-0 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 shadow-sm"
+              >
+                <DownloadSimple className="w-4 h-4 mr-2 weight-bold" />
+                Download Extension
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-secondary/30 rounded-xl p-6 border flex flex-col justify-between aspect-video md:col-span-2">
           <div>
             <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center mb-4">

@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "TaskSkill Extension",
+  "version": "1.0",
+  "description": "Seamlessly sync and manage your TaskSkill tasks from anywhere.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open TaskSkill"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "https://*.vercel.app/*",
+    "https://*.supabase.co/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:3000/*",
+        "https://*.vercel.app/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

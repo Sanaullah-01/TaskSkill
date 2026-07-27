@@ -13,6 +13,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Initial fetch of session to populate Redux
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session?.user) {
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem('taskskill-ext-auth', JSON.stringify(session));
+        }
         dispatch(
           setUser({
             id: session.user.id,
@@ -28,6 +31,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session?.user) {
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem('taskskill-ext-auth', JSON.stringify(session));
+        }
         dispatch(
           setUser({
             id: session.user.id,
@@ -36,6 +42,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           })
         );
       } else {
+        if (typeof window !== 'undefined') {
+          window.localStorage.removeItem('taskskill-ext-auth');
+        }
         dispatch(setUser(null));
       }
     });
