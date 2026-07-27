@@ -40,10 +40,12 @@ export default function TasksPage() {
         
         {/* Main List Pane */}
         <div className="flex-1 overflow-y-auto px-6 py-6 border-r border-transparent">
-          <TodoList 
-            selectedTaskId={selectedTaskId} 
-            onSelectTask={setSelectedTaskId} 
-          />
+          <React.Suspense fallback={<div className="flex justify-center p-8"><CircleNotch className="w-6 h-6 animate-spin text-primary" /></div>}>
+            <TodoList 
+              selectedTaskId={selectedTaskId} 
+              onSelectTask={setSelectedTaskId} 
+            />
+          </React.Suspense>
         </div>
 
         {/* Details Pane */}
