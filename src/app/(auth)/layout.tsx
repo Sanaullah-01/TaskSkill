@@ -31,11 +31,11 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         </div>
       </div>
       <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-8 bg-background">
-        <RecaptchaWrapper>
-          <div className="mx-auto w-full max-w-sm lg:w-96">
+        <div className="mx-auto w-full max-w-sm lg:w-96">
+          <RecaptchaWrapper>
             {children}
-          </div>
-        </RecaptchaWrapper>
+          </RecaptchaWrapper>
+        </div>
       </div>
     </div>
   );
