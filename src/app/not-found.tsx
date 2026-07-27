@@ -11,9 +11,9 @@ export default function NotFound() {
         We couldn't find the page you were looking for. It might have been moved, deleted, or perhaps the URL is incorrect.
       </p>
       <div className="flex gap-4">
-        <Button asChild>
-          <Link href="/dashboard">Return to Dashboard</Link>
-        </Button>
+        <Link href="/dashboard">
+          <Button>Return to Dashboard</Button>
+        </Link>
       </div>
     </div>
   );
