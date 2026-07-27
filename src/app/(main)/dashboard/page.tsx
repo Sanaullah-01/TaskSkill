@@ -15,7 +15,7 @@ export default function DashboardPage() {
         <StatCard 
           title="Total Tasks" 
           value={124} 
-          icon={ListTodo} 
+          icon={<ListTodo className="h-4 w-4 text-muted-foreground" />} 
           delay={0.1}
           description="from last month"
           trend="up"
@@ -24,7 +24,7 @@ export default function DashboardPage() {
         <StatCard 
           title="Pending" 
           value={18} 
-          icon={Clock} 
+          icon={<Clock className="h-4 w-4 text-muted-foreground" />} 
           delay={0.2}
           description="from last week"
           trend="down"
@@ -33,7 +33,7 @@ export default function DashboardPage() {
         <StatCard 
           title="Completed" 
           value={82} 
-          icon={CheckCircle2} 
+          icon={<CheckCircle2 className="h-4 w-4 text-muted-foreground" />} 
           delay={0.3}
           description="from last month"
           trend="up"
@@ -42,7 +42,7 @@ export default function DashboardPage() {
         <StatCard 
           title="Overdue" 
           value={4} 
-          icon={AlertCircle} 
+          icon={<AlertCircle className="h-4 w-4 text-muted-foreground" />} 
           delay={0.4}
           description="needs immediate attention"
           trend="neutral"
